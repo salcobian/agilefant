@@ -218,9 +218,6 @@ TasksWithoutStoryController.prototype.firstRenderComplete = function() {
     var hash = window.location.hash;
     var row = this.view.getRowById(hash.substring(1));
     if(row) {
-      if(!$.browser.msie) {
-        window.location.hash = "#";
-      }
       var pos = row.getElement().offset();
       window.scrollTo(pos.left, pos.top);
     }

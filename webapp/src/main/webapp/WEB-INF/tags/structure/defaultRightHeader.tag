@@ -27,7 +27,7 @@
   var updateMessageCookie = jQuery.cookie("updatemessage");
 
   var compareVersions = function(latestVersion, updateMessage) {
-    if (myVersion != latestVersion && myVersion != "CONNECTIONFAILURE") {
+    if (latestVersion != "CONNECTIONFAILURE" && myVersion != latestVersion && isMyVersionOld(myVersion, latestVersion)) {
       jQuery("#updateMessage").append('<img id="updateImage" src="static/img/star_red.png"></img>');
       jQuery("#updateMessage").append('<div id="updateMessageBox">' + updateMessage + '</div>');
       jQuery("#updateMessage").append('<div style="float:right">&nbsp|</div>');
@@ -58,4 +58,31 @@
     jQuery.cookie("updatemessage", updateMessage, { expires: 1 });
     compareVersions(latestVersion, updateMessage);
   };
+  
+  function isMyVersionOld(myVersion, latestVersion) {
+    var latestVersionParts = latestVersion.split('.');
+    var myVersionParts = myVersion.split('.');
+    
+    for (var i = 0; i < latestVersionParts.length; ++i) {
+      if (myVersionParts.length == i) {
+        return true;
+      }
+        
+      if (latestVersionParts[i] == myVersionParts[i]) {
+        continue;
+      }
+      else if (latestVersionParts[i] > myVersionParts[i]) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+    
+    if (latestVersionParts.length != myVersionParts.length) {
+      return false;
+    }
+    
+    return false;
+  }
 </script>

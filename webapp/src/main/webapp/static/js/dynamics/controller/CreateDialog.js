@@ -605,7 +605,7 @@ CreateDialog.User.prototype.initFormConfig = function() {
   var config = new DynamicTableConfiguration({
     leftWidth: '24%',
     rightWidth: '75%',
-    validators: [ UserModel.Validators.passwordValidator ],
+    validators: [ UserModel.Validators.passwordValidator, UserModel.Validators.loginNameValidator ],
     closeRowCallback: CreateDialogClass.prototype.close
   });
   

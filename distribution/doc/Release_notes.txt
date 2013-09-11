@@ -1,15 +1,50 @@
-Agilefant 3.3.1
+Agilefant 3.3.3
 Release notes
-2013-06-07
+2013-08-29
 --
 
 Please spend a couple of minutes to register your organization at
-http://tinyurl.com/agilefant-registration
-This helps us keep a full-featured Agilefant free-of-charge forever!
+http://tinyurl.com/agilefant-registration-2013
+This helps us keep Agilefant open source and free forever!
 
 +--------------------+
 |     CHANGESET      |
 +--------------------+
+
+Changes from 3.3.2
+2013-08-29
+Bug fixes:
++ Allow non-admin user to create only other non-admin users
++ Autocomplete box shows only iterations that the user can access
++ Prevent infinite loop when fetching story metrics
++ Version check comparison fixed
++ Refactoring backlog access code
+
++ Small UX improvements
+  + Renamed Story queue => My stories
+
+Changes from 3.3.1
+2013-08-15
+Enhancements:
++ Support hotline - hosted users can now chat with Agilefant Headquarters from their account
+
+Usability improved:
++ Help page rewritten, with links to Agilefant User Guide and FAQ
++ Login name is now automatically generated based on email
++ Daily work shows a 'loading' marker when loading data
++ Upon logging into a fresh, newly installed Agilefant or Cloud account, open the 'All backlogs' accordion section by default
++ Keyboard shortcut to show the tasks of a story
++ Focus goes to username on the login page (so you can just press enter to login)
+
+Bug fixes:
++ Vertical ordering of stories in Breakdown was broken; fixed
++ In some cases story ranks broke when moving stories between iterations; fixed (contribution by JBazzo)
++ A story that has children sometimes erroneously showed up in project leaf stories list; fixed (contribution by JBazzo)
++ Newly created custom portfolio view widgets did not show up without refreshing; fixed
++ Problems rendering the list of teams (requested at forum); fixed
++ Tasks in standalone iterations did not always show up in search; fixed
++ Effort spent in deferred stories did not show up in the Daily work Story queue; fixed
+
 
 Changes from 3.3
 2013-06-07

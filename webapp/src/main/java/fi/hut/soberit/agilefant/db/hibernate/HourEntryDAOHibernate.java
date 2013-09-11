@@ -49,8 +49,7 @@ public class HourEntryDAOHibernate extends GenericDAOHibernate<HourEntry>
         crit.setProjection(Projections.sum("minutesSpent"));
         if (task)
             crit = crit.createCriteria("task");
-        crit = crit.createCriteria("story").add(Restrictions.idEq(storyId))
-                .add(Restrictions.ne("state", TaskState.DEFERRED));
+        crit = crit.createCriteria("story").add(Restrictions.idEq(storyId));
         Long result = (Long) this.uniqueResult(crit);
 
         if (result == null)

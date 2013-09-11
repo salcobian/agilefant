@@ -258,6 +258,8 @@ public class StoryBusinessImpl extends GenericBusinessImpl<Story> implements
                 storyRankBusiness.createRank(newStory, newStoryIteration);
             }
             return;
+        } else {
+            storyRankBusiness.removeRank(oldStory, oldStoryIteration);
         }
     }
 
@@ -612,7 +614,7 @@ public class StoryBusinessImpl extends GenericBusinessImpl<Story> implements
         if(parent != null) {
             storyHierarchyBusiness.updateChildrenTreeRanks(parent);
             Backlog parentBacklog = parent.getBacklog();
-            if (parentBacklog != null) {
+            if (parentBacklog != null && parent.getChildren().isEmpty()) {
                 storyRankBusiness.rankToBottom(parent, parentBacklog);
             }
         }

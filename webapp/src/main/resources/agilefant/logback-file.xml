@@ -17,6 +17,10 @@
 	<logger name="fi.hut.soberit.agilefant">
 		<level value="info" />
 	</logger>
+	
+	<logger name="com.opensymphony.xwork2.ognl.OgnlValueStack">
+		<level value="error" />
+	</logger>
 
 	<root level="info">
 		<appender-ref ref="FILE" />

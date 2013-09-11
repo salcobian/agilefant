@@ -9,7 +9,7 @@ differently from what is described in the installation guide. Please
 contact the person who is responsible for your Agilefant
 installation.
 
-<p>Error stacktrace:</p>
+<p>Error:</p>
 <p>${errorStacktrace}</p>
 
 <br/><a

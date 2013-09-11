@@ -8,17 +8,15 @@
 
 <head>
   <title>Agilefant</title>
-  <aef:css path="main" minify="true" />
+  <link rel="stylesheet" type="text/css" href="/global/static/css/main.css" />  
   <!--[if IE 7]><aef:css path="IE7styles.css" /><![endif]-->
   <!--[if IE 8]><aef:css path="IE8styles.css" /><![endif]-->
   
-  <link rel="shortcut icon" href="static/img/favicon.png" type="image/png" />
-
-  <aef:javascript path="jquery" minify="true" />
+  <link rel="shortcut icon" href="/global/static/img/favicon.png" type="image/png" />
 
   <style type="text/css">  
     #outerWrapper {
-      background: url('static/img/login_gradient.png') repeat-x;
+      background: url('/global/static/img/login_gradient.png') repeat-x;
       height: 300px;
     }
   
@@ -119,59 +117,15 @@
 
 <body>
 
-<c:if test="${param.error == 1}">
-  <c:set var="errorAddedClass" value="loginWrapperWithError" />
-</c:if>
-
-<script type="text/javascript">
-window.onload = function() {
-  document.getElementById("username").focus();
-}
-</script>
-
 <div id="outerWrapper">
 
   <div id="loginWrapper" class="dynamictable ui-widget-content ui-corner-all ${errorAddedClass}">
     <div id="heading" class="ui-widget-header ui-corner-all dynamictable-caption dynamictable-caption-block">
-      Agilefant login
+      Oops!
     </div>
-
-
-    <div id="messageContainer">
-      <c:choose>
-      <c:when test="${param.error == 1}">
-        <p style="color: #f00; margin-bottom:20px">Invalid username or password, please try again.</p>
-      </c:when>
-      <c:when test="${param.error == 2}">
-        <p style="color: #f00; margin-bottom:20px">Session timed out. Please log in.</p>
-      </c:when>
-      </c:choose>
-    </div>
-
     <div id="login">
-      <form method="post" action="j_spring_security_check">
-        <table border="0">
-        <tr>
-          <td rowspan="4" style="padding: 0 1em 0 0;"><img src="static/img/agilefant-logo-94px.png" width="94" /></td>
-          <td>Username</td><td><input id="username" name="j_username" type="text" style="width: 150px;"/></td>
-        </tr>
-        <tr>
-          <td>Password</td><td><input name="j_password" type="password" style="width: 150px ;"/></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td><td>Remember me <input type="checkbox" name="_spring_security_remember_me" /></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td><td><input value="Log in" type="submit" /></td>
-        </tr>
-        </table>                
-      </form>
+		The page you tried to load was not found. Please continue to <a href="/login.jsp">Login Page</a>.
     </div>
-<!--     
-    <div id="disclaimer" class="ui-widget-content ui-corner-all">
-      Please report found bugs at <a href="http://www.agilefant.org/mantis/">http://www.agilefant.org/mantis/</a></p>
-    </div>
--->    
   </div>
   
   <div id="footerWrapper">

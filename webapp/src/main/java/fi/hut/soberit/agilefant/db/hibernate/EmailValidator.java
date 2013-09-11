@@ -1,6 +1,7 @@
 package fi.hut.soberit.agilefant.db.hibernate;
 
 import java.io.Serializable;
+import java.util.regex.Pattern;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -25,9 +26,13 @@ public class EmailValidator implements ConstraintValidator<Email, String>, Seria
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        if (Strings.isNullOrEmpty(value))
+        if (Strings.isNullOrEmpty(value) || org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(value))
             return true;
-        return org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(value);
+        return EMAIL_PATTERN.matcher(value).matches();
     }
+
+	private static final Pattern EMAIL_PATTERN = Pattern.compile(
+		"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+		+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z0-9]{2,})$");
 
 }

@@ -81,7 +81,7 @@ CREATE TABLE `agilefant_revisions` (
   `userId` int(11) NOT NULL,
   `userName` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +90,7 @@ CREATE TABLE `agilefant_revisions` (
 
 LOCK TABLES `agilefant_revisions` WRITE;
 /*!40000 ALTER TABLE `agilefant_revisions` DISABLE KEYS */;
-INSERT INTO `agilefant_revisions` VALUES (12,1369925667265,3,'Administrator'),(13,1369925825692,3,'Administrator'),(14,1369925853767,3,'Administrator original'),(15,1369925865431,3,'Administrator original'),(16,1369990668961,5,'Administrator'),(17,1369990813264,5,'Administrator'),(18,1369990855207,5,'Administrator'),(19,1369990855458,5,'Administrator'),(20,1369990893520,5,'Administrator'),(21,1369990899423,5,'Administrator'),(22,1369990917113,5,'Administrator'),(23,1369990930736,5,'Administrator'),(24,1369990935625,5,'Administrator'),(25,1369990953443,5,'Administrator'),(26,1369990989675,5,'Administrator'),(27,1369990994132,5,'Administrator'),(28,1369990997631,5,'Administrator'),(29,1369991000455,5,'Administrator'),(30,1369991005822,5,'Administrator'),(31,1369991011993,5,'Administrator'),(32,1369991034569,5,'Administrator'),(33,1369991045739,5,'Administrator'),(34,1369991064753,5,'Administrator'),(35,1369991081881,5,'Administrator'),(36,1369991109030,5,'Administrator'),(37,1369991121957,5,'Administrator'),(38,1369991125864,5,'Administrator'),(39,1369991134700,5,'Administrator'),(40,1369991140951,5,'Administrator'),(41,1369991159886,5,'Administrator'),(42,1369991165423,5,'Administrator'),(43,1369991184551,5,'Administrator'),(44,1369991301620,5,'Administrator'),(45,1369991357374,5,'Administrator'),(46,1370000406600,5,'Administrator'),(47,1370000426575,5,'Administrator'),(48,1370000444135,5,'Administrator'),(49,1370000447030,5,'Administrator'),(50,1370000450030,5,'Administrator'),(51,1370000468000,5,'Administrator'),(52,1370000483192,5,'Administrator'),(53,1370000487943,5,'Administrator'),(54,1370000499653,5,'Administrator'),(55,1370000504524,5,'Administrator'),(56,1370001480806,5,'Administrator'),(57,1370001505882,5,'Administrator'),(58,1370001521063,5,'Administrator'),(59,1370001628246,5,'Administrator'),(60,1370001668144,5,'Administrator'),(61,1370001906079,5,'Administrator'),(62,1370001946817,5,'Administrator'),(63,1370001954594,5,'Administrator'),(64,1370002032868,5,'Administrator');
+INSERT INTO `agilefant_revisions` VALUES (12,1369925667265,3,'Administrator'),(13,1369925825692,3,'Administrator'),(14,1369925853767,3,'Administrator original'),(15,1369925865431,3,'Administrator original'),(16,1369990668961,5,'Administrator'),(17,1369990813264,5,'Administrator'),(18,1369990855207,5,'Administrator'),(19,1369990855458,5,'Administrator'),(20,1369990893520,5,'Administrator'),(21,1369990899423,5,'Administrator'),(22,1369990917113,5,'Administrator'),(23,1369990930736,5,'Administrator'),(24,1369990935625,5,'Administrator'),(25,1369990953443,5,'Administrator'),(26,1369990989675,5,'Administrator'),(27,1369990994132,5,'Administrator'),(28,1369990997631,5,'Administrator'),(29,1369991000455,5,'Administrator'),(30,1369991005822,5,'Administrator'),(31,1369991011993,5,'Administrator'),(32,1369991034569,5,'Administrator'),(33,1369991045739,5,'Administrator'),(34,1369991064753,5,'Administrator'),(35,1369991081881,5,'Administrator'),(36,1369991109030,5,'Administrator'),(37,1369991121957,5,'Administrator'),(38,1369991125864,5,'Administrator'),(39,1369991134700,5,'Administrator'),(40,1369991140951,5,'Administrator'),(41,1369991159886,5,'Administrator'),(42,1369991165423,5,'Administrator'),(43,1369991184551,5,'Administrator'),(44,1369991301620,5,'Administrator'),(45,1369991357374,5,'Administrator'),(46,1370000406600,5,'Administrator'),(47,1370000426575,5,'Administrator'),(48,1370000444135,5,'Administrator'),(49,1370000447030,5,'Administrator'),(50,1370000450030,5,'Administrator'),(51,1370000468000,5,'Administrator'),(52,1370000483192,5,'Administrator'),(53,1370000487943,5,'Administrator'),(54,1370000499653,5,'Administrator'),(55,1370000504524,5,'Administrator'),(56,1370001480806,5,'Administrator'),(57,1370001505882,5,'Administrator'),(58,1370001521063,5,'Administrator'),(59,1370001628246,5,'Administrator'),(60,1370001668144,5,'Administrator'),(61,1370001906079,5,'Administrator'),(62,1370001946817,5,'Administrator'),(63,1370001954594,5,'Administrator'),(64,1370002032868,5,'Administrator'),(65,1370092236585,5,'Administrator'),(66,1370092238286,5,'Administrator'),(67,1370092239484,5,'Administrator'),(68,1370092243446,5,'Administrator'),(69,1370092245180,5,'Administrator'),(70,1371118207470,5,'Administrator'),(71,1371118233377,5,'Administrator'),(72,1371118257928,5,'Administrator'),(73,1371118385347,5,'Administrator');
 /*!40000 ALTER TABLE `agilefant_revisions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,9 +112,9 @@ CREATE TABLE `assignment` (
   KEY `FK3D2B86CDE537EC82` (`backlog_id`),
   KEY `FK3D2B86CDC1610AD2` (`user_id`),
   KEY `FK3D2B86CDF63400A2` (`backlog_id`),
-  CONSTRAINT `FK3D2B86CDF63400A2` FOREIGN KEY (`backlog_id`) REFERENCES `backlogs` (`id`),
   CONSTRAINT `FK3D2B86CDC1610AD2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `FK3D2B86CDE537EC82` FOREIGN KEY (`backlog_id`) REFERENCES `backlogs` (`id`),
+  CONSTRAINT `FK3D2B86CDF63400A2` FOREIGN KEY (`backlog_id`) REFERENCES `backlogs` (`id`),
   CONSTRAINT `FK3D2B86CDF8762ABE` FOREIGN KEY (`backlog_id`) REFERENCES `backlogs` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -252,7 +252,7 @@ CREATE TABLE `history_backlogs` (
   PRIMARY KEY (`id`),
   KEY `FKA6B13261F8762ABE` (`backlog_id`),
   CONSTRAINT `FKA6B13261F8762ABE` FOREIGN KEY (`backlog_id`) REFERENCES `backlogs` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -261,7 +261,7 @@ CREATE TABLE `history_backlogs` (
 
 LOCK TABLES `history_backlogs` WRITE;
 /*!40000 ALTER TABLE `history_backlogs` DISABLE KEYS */;
-INSERT INTO `history_backlogs` VALUES (2,0,0,0,0,'2012-04-10 23:44:46',7),(3,0,0,0,0,'2012-04-10 23:42:37',8),(4,0,0,0,0,'2012-04-10 23:43:21',9),(5,0,0,0,0,'2012-05-14 09:44:14',7),(6,0,0,0,0,'2012-05-14 09:40:20',8),(7,0,0,0,0,'2012-06-19 15:08:45',8),(8,0,0,0,0,'2012-06-19 15:04:16',7),(9,0,0,0,0,'2012-08-15 15:16:20',8),(10,0,0,0,0,'2012-08-15 15:16:00',7),(11,0,0,0,0,'2012-10-18 15:37:11',8),(12,0,0,0,0,'2012-10-18 15:44:12',7),(13,0,0,0,0,'2012-10-18 15:48:29',9),(14,0,0,0,0,'2012-10-18 15:47:08',10),(15,0,0,0,0,'2012-10-26 09:31:40',9),(16,0,0,0,0,'2012-10-26 09:32:22',8),(17,0,0,0,0,'2012-11-07 23:42:32',8),(18,0,0,0,0,'2012-11-07 23:48:29',9),(19,0,0,0,0,'2012-12-04 11:09:52',9),(20,0,0,0,0,'2012-12-21 11:33:16',10),(21,0,0,0,0,'2012-12-21 11:42:38',9),(22,0,0,0,0,'2012-12-21 11:41:25',8),(23,0,0,0,0,'2013-01-31 10:39:10',9),(24,0,0,0,0,'2013-01-31 10:41:42',10),(25,14,2,14,14,'2013-03-08 12:46:31',10),(26,13,11,13,13,'2013-03-08 12:38:20',9),(27,5,5,5,5,'2013-03-08 12:36:29',7),(28,14,14,14,14,'2013-04-17 16:16:56',10),(29,13,11,13,13,'2013-04-17 16:16:49',9),(30,30,14,30,14,'2013-05-31 12:06:24',10),(31,35,14,35,19,'2013-05-31 15:07:12',10);
+INSERT INTO `history_backlogs` VALUES (2,0,0,0,0,'2012-04-10 23:44:46',7),(3,0,0,0,0,'2012-04-10 23:42:37',8),(4,0,0,0,0,'2012-04-10 23:43:21',9),(5,0,0,0,0,'2012-05-14 09:44:14',7),(6,0,0,0,0,'2012-05-14 09:40:20',8),(7,0,0,0,0,'2012-06-19 15:08:45',8),(8,0,0,0,0,'2012-06-19 15:04:16',7),(9,0,0,0,0,'2012-08-15 15:16:20',8),(10,0,0,0,0,'2012-08-15 15:16:00',7),(11,0,0,0,0,'2012-10-18 15:37:11',8),(12,0,0,0,0,'2012-10-18 15:44:12',7),(13,0,0,0,0,'2012-10-18 15:48:29',9),(14,0,0,0,0,'2012-10-18 15:47:08',10),(15,0,0,0,0,'2012-10-26 09:31:40',9),(16,0,0,0,0,'2012-10-26 09:32:22',8),(17,0,0,0,0,'2012-11-07 23:42:32',8),(18,0,0,0,0,'2012-11-07 23:48:29',9),(19,0,0,0,0,'2012-12-04 11:09:52',9),(20,0,0,0,0,'2012-12-21 11:33:16',10),(21,0,0,0,0,'2012-12-21 11:42:38',9),(22,0,0,0,0,'2012-12-21 11:41:25',8),(23,0,0,0,0,'2013-01-31 10:39:10',9),(24,0,0,0,0,'2013-01-31 10:41:42',10),(25,14,2,14,14,'2013-03-08 12:46:31',10),(26,13,11,13,13,'2013-03-08 12:38:20',9),(27,5,5,5,5,'2013-03-08 12:36:29',7),(28,14,14,14,14,'2013-04-17 16:16:56',10),(29,13,11,13,13,'2013-04-17 16:16:49',9),(30,30,14,30,14,'2013-05-31 12:06:24',10),(31,35,14,35,19,'2013-05-31 15:07:12',10),(32,35,14,35,19,'2013-06-13 13:13:05',10);
 /*!40000 ALTER TABLE `history_backlogs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -381,7 +381,7 @@ CREATE TABLE `logins` (
   PRIMARY KEY (`id`),
   KEY `FK4B213410C1610AD4` (`user_id`),
   CONSTRAINT `FK4B213410C1610AD4` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -390,7 +390,6 @@ CREATE TABLE `logins` (
 
 LOCK TABLES `logins` WRITE;
 /*!40000 ALTER TABLE `logins` DISABLE KEYS */;
-INSERT INTO `logins` VALUES (12,5,'2013-05-31 15:06:59'),(13,5,'2013-05-31 16:00:37'),(14,5,'2013-05-31 18:22:34');
 /*!40000 ALTER TABLE `logins` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -443,7 +442,7 @@ CREATE TABLE `settings` (
   `value` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -478,8 +477,8 @@ CREATE TABLE `stories` (
   KEY `FK8FB060534157D2A2` (`iteration_id`),
   KEY `FK8FB06053F63400A2` (`backlog_id`),
   KEY `FK8FB06053F5E897CD` (`parent_id`),
-  CONSTRAINT `FK8FB06053F5E897CD` FOREIGN KEY (`parent_id`) REFERENCES `stories` (`id`),
   CONSTRAINT `FK8FB060534157D2A2` FOREIGN KEY (`iteration_id`) REFERENCES `backlogs` (`id`),
+  CONSTRAINT `FK8FB06053F5E897CD` FOREIGN KEY (`parent_id`) REFERENCES `stories` (`id`),
   CONSTRAINT `FK8FB06053F63400A2` FOREIGN KEY (`backlog_id`) REFERENCES `backlogs` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -526,7 +525,7 @@ CREATE TABLE `stories_AUD` (
 
 LOCK TABLES `stories_AUD` WRITE;
 /*!40000 ALTER TABLE `stories_AUD` DISABLE KEYS */;
-INSERT INTO `stories_AUD` VALUES (3,12,0,NULL,'FREE, OPEN SOURCE MARKET LEADER OF AGILE MGMT TOOLS',1,NULL,NULL,1,5,NULL,NULL),(4,12,0,NULL,'MEANEST MACHINE',1,NULL,NULL,0,5,NULL,3),(5,12,0,NULL,'MOST USERS',1,NULL,NULL,1,5,NULL,3),(6,12,0,NULL,'FULL POWER COMMUNITY',1,NULL,NULL,2,5,NULL,3),(7,12,0,'Agilefant has the conceptually best fit for real/world agile/lean development','The best model',5,NULL,NULL,0,7,NULL,4),(8,12,0,NULL,'Agilefant has gained the market leadership of free tools',1,NULL,NULL,4,5,NULL,5),(9,12,0,NULL,'Community is submitting in more new features than can be included in releases',1,NULL,NULL,0,5,NULL,6),(10,12,0,'(Includes Jarno, Petteri and Benjamin)','At least 10 people are contributing to Agilefant\'s development',5,NULL,NULL,1,5,NULL,9),(11,12,0,NULL,'Efforts to launch Agilefant are fully funded',5,NULL,NULL,4,5,NULL,6),(12,12,0,NULL,'An Agilefant Team has taken part in the EIT 2012 Cloud Summer School and won the pitching competition',5,NULL,NULL,0,8,13,11),(13,12,0,NULL,'The 3.0 beta backlog has been prioritized, published,drummed about, and ready to be taken apart by the coding-hungry community!',5,NULL,NULL,0,7,12,10),(14,12,0,NULL,'Enough evaluation instances readily available online',4,NULL,NULL,2,5,NULL,5),(14,46,1,NULL,'Enough evaluation instances readily available online',5,NULL,NULL,2,5,NULL,5),(15,12,0,NULL,'Agilefant has been recognized as the meanest machine',1,200,NULL,3,5,NULL,5),(16,12,0,NULL,'Releases',1,NULL,NULL,1,5,NULL,15),(17,12,0,NULL,'2.5.0',5,5,NULL,5,7,11,16),(18,12,0,NULL,'3.0 alpha 1',5,NULL,NULL,6,7,12,16),(19,12,0,NULL,'3.0 beta released',5,NULL,NULL,10,8,13,16),(20,12,0,'Blocked. No better free tool than Agilefant exists.','Find a better backlog management tool, one that is free as well as scales!',5,5,NULL,1,6,NULL,NULL),(21,12,0,'Blocked, \'cause the store is not open','Buy milk',3,1,NULL,3,6,NULL,NULL),(22,12,0,'<i>Pending for a raise</i>','Get a new car',2,40,0,4,6,NULL,NULL),(23,12,0,'Deferred, don\'t need more beer today','Get more beer',6,3,NULL,2,6,14,NULL),(23,48,1,'Deferred, don\'t need more beer today','Get more beer',1,3,NULL,2,6,14,NULL),(23,49,1,'Deferred, don\'t need more beer today','Get more beer',5,3,NULL,2,6,14,NULL),(23,50,1,'Deferred, don\'t need more beer today','Get more beer',6,3,NULL,2,6,14,NULL),(23,57,1,'Deferred, don\'t need more beer today','Get more beer',6,3,NULL,2,6,14,NULL),(24,12,0,'Agilefant HQ has enough funding to&nbsp; provide and develop the best free open source backlog management tool. For this, commercial activities are in place.','Agilefant Inc. has been launched',1,NULL,NULL,3,5,NULL,6),(25,12,0,NULL,'3.0 alpha 2',5,NULL,NULL,7,7,12,16),(26,12,0,NULL,'Instances 1-13',5,5,NULL,1,9,NULL,14),(27,12,0,NULL,'Instances 14-30',5,3,NULL,2,9,NULL,14),(28,12,0,NULL,'First steps',5,NULL,NULL,3,8,NULL,24),(29,12,0,NULL,'Prel. business models plan prepared at the EIT ICT labs Helsinki Summer School',5,NULL,NULL,0,8,13,28),(30,12,0,NULL,'Set Agilefant as one of the topics at EIT ICT labs Helsinki Summer School',5,NULL,NULL,2,8,NULL,28),(31,12,0,NULL,'Killer team recruited',5,NULL,NULL,1,8,NULL,28),(32,12,0,NULL,'Pre-course coding sessions',5,NULL,NULL,1,7,12,10),(33,12,0,NULL,'3.0 alpha 3..7',5,NULL,NULL,8,7,NULL,16),(34,12,0,NULL,'3.0 alpha 8',5,NULL,NULL,9,7,NULL,16),(35,12,0,NULL,'A full-time engineer has been recruited to work on Agilefant for the Summer',5,NULL,NULL,5,8,13,6),(36,12,0,NULL,'Agilefant has 100 registered user organizations',5,NULL,NULL,2,8,13,8),(36,43,1,NULL,'Agilefant has 100 registered user organizations',5,NULL,NULL,3,8,13,8),(37,12,0,NULL,'Agilefant has 200+ registered user organizations',4,NULL,NULL,1,9,NULL,8),(37,43,1,NULL,'Agilefant has 200+ registered user organizations',4,NULL,NULL,2,9,NULL,8),(38,12,0,'','Celebrate the release of Agilefant 3.0.0',5,NULL,NULL,2,8,14,6),(39,12,0,'Pending for:<br>- most important bugs in 3.0.0 have been discovered<br>- a core team member has started working on 3.0.0','3.0.1 released',5,NULL,NULL,11,9,16,16),(40,12,0,NULL,'Instances 31-100',5,3,NULL,3,9,NULL,14),(41,12,0,NULL,'Agilefant has 500 registered user organizations',1,NULL,NULL,0,10,20,8),(41,41,1,NULL,'Agilefant has 500 registered user organizations',5,NULL,NULL,0,10,20,8),(41,42,1,NULL,'Agilefant has 2000 registered user organizations',5,NULL,NULL,0,10,20,8),(41,43,1,NULL,'Agilefant has 2000 registered user organizations',5,NULL,NULL,1,10,20,8),(42,12,0,NULL,'Got 311ke from Tekes\' TUTL program to prepare the launch',5,NULL,NULL,1,9,16,24),(43,12,0,NULL,'Market leader of free open source tools',1,NULL,NULL,1,5,NULL,5),(44,12,0,NULL,'Cloud ver 2 set up',4,NULL,NULL,0,9,16,43),(45,12,0,NULL,'10 000 hosted users',1,NULL,NULL,4,10,NULL,43),(46,12,0,NULL,'3.0.0 released',5,NULL,NULL,12,9,15,16),(47,12,0,'','Submit the best application of TUTL funding round #3',5,NULL,0,2,9,15,24),(48,12,0,NULL,'3.0.2 released',4,2,NULL,4,9,16,16),(49,12,0,NULL,'2 seconds to Agilefant trial',1,NULL,NULL,0,9,NULL,5),(50,12,0,NULL,'Open just-email registration form for single-product trials in the community fant',5,NULL,NULL,0,9,16,49),(51,12,0,NULL,'Get Christmas presents for everyone',5,NULL,NULL,0,6,NULL,NULL),(52,12,0,'','Avoid the end of the world',5,NULL,NULL,0,NULL,14,NULL),(53,12,0,'','Celebrate Christmas',1,NULL,NULL,1,NULL,14,6),(53,16,1,'','Celebrate Christmas',5,NULL,NULL,1,NULL,14,6),(54,12,0,NULL,'Gathered a rockstar team for TUTL',5,NULL,NULL,0,10,NULL,24),(55,12,0,'','Recruited a full time CTO w/ full power tech savvy',5,NULL,NULL,1,10,17,54),(56,12,0,NULL,'Recruited three part time junior but xtremely skilled developers',5,NULL,NULL,2,10,17,54),(57,12,0,NULL,'Recuited a full time star developer',5,NULL,NULL,0,10,18,54),(58,12,0,NULL,'Instances 101-131',5,2,NULL,4,10,17,14),(59,12,0,NULL,'3.0.3 released',5,3,NULL,3,10,17,16),(60,12,0,NULL,'Semi-automatic evaluation and trial instance creation',5,2,NULL,7,10,19,14),(61,12,0,NULL,'Instances 131-145',5,2,NULL,5,10,18,14),(62,12,0,NULL,'3.1.1 released',5,5,NULL,2,10,19,16),(63,12,0,NULL,'Scripted the single-product account creation',5,NULL,NULL,6,10,18,14),(64,12,0,NULL,'Cloud ver 3 set up',5,NULL,NULL,1,10,19,43),(65,12,0,NULL,'Cloud ver 4 set up',1,NULL,NULL,3,10,20,43),(66,12,0,NULL,'200 hosted users',5,NULL,NULL,2,10,18,43),(67,12,0,NULL,'Each new release includes a community contribution',5,NULL,NULL,0,10,19,9),(68,12,0,NULL,'Evangelism tour',1,NULL,NULL,0,10,NULL,15),(69,12,0,NULL,'Tell to people @ AgileJkl',1,NULL,NULL,0,10,20,68),(69,18,1,NULL,'Tell to people @ AgileJkl',5,NULL,NULL,0,10,20,68),(69,20,1,NULL,'Tell to people @ AgileJkl',5,NULL,NULL,1,10,20,68),(69,25,1,NULL,'Tell to people @ AgileJkl',5,NULL,NULL,2,10,20,68),(70,12,0,NULL,'Pitch @ Tivit Results Seminar Finlandia Hall',1,NULL,NULL,1,10,20,68),(70,19,1,NULL,'Pitch @ Tivit Results Seminar Finlandia Hall',5,NULL,NULL,1,10,20,68),(70,20,1,NULL,'Pitch @ Tivit Results Seminar Finlandia Hall',5,NULL,NULL,2,10,20,68),(70,25,1,NULL,'Pitch @ Tivit Results Seminar Finlandia Hall',5,NULL,NULL,3,10,20,68),(71,12,0,NULL,'Get hot local references',1,NULL,NULL,2,10,NULL,68),(71,20,1,NULL,'Get hot local references',1,NULL,NULL,3,10,NULL,68),(71,25,1,NULL,'Get hot local references',1,NULL,NULL,4,10,NULL,68),(72,12,0,NULL,'Pitch @ Nitor Creations',1,NULL,NULL,0,10,20,71),(73,12,0,NULL,'Scripted the new instance creation',4,NULL,NULL,0,10,20,14),(74,12,0,NULL,'3.2 released',4,NULL,NULL,1,10,20,16),(75,12,0,NULL,'3.3 released',1,NULL,NULL,0,10,20,16),(76,20,0,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',0,NULL,NULL,0,10,NULL,68),(76,21,1,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',4,NULL,NULL,0,10,NULL,68),(76,22,1,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',4,NULL,NULL,0,10,21,68),(76,23,1,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',4,NULL,NULL,0,10,21,68),(76,24,1,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',4,8,NULL,0,10,21,68),(76,25,1,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',4,8,NULL,1,10,21,68),(77,25,0,NULL,'Attended XP2013 Full Power',0,NULL,NULL,0,10,NULL,68),(77,27,1,NULL,'Attended XP2013 Full Power',1,NULL,NULL,0,10,NULL,68),(78,26,0,NULL,'Got practice pitching Agilefant Pecha Kucha -style',0,NULL,NULL,0,10,NULL,77),(78,27,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,NULL,NULL,0,10,NULL,77),(78,28,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,3,NULL,0,10,NULL,77),(78,29,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,4,NULL,0,10,NULL,77),(78,30,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,4,NULL,0,10,21,77),(78,31,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,4,NULL,0,10,21,77),(78,32,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,4,NULL,1,10,21,77),(78,36,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,4,NULL,2,10,21,77),(79,32,0,'','Done the sessions',0,NULL,NULL,0,10,NULL,77),(79,33,1,'','Done the sessions',0,NULL,NULL,0,10,21,77),(79,34,1,'','Done the sessions',0,NULL,NULL,0,10,21,77),(79,35,1,'','Done the sessions',2,NULL,NULL,0,10,21,77),(79,36,1,'','Done the sessions',2,NULL,NULL,1,10,21,77),(80,36,0,NULL,'Surveyed participants about their tool of choice',0,NULL,NULL,0,10,NULL,77),(80,37,1,NULL,'Surveyed participants about their tool of choice',2,NULL,NULL,0,10,NULL,77),(80,38,1,NULL,'Surveyed participants about their tool of choice',2,NULL,NULL,0,10,21,77),(80,39,1,NULL,'Surveyed participants about their tool of choice',2,4,NULL,0,10,21,77),(80,40,1,NULL,'Surveyed participants about their tool of choice',2,4,NULL,0,10,21,77),(81,43,0,NULL,'Automatic sign-up of new trials activated',0,NULL,NULL,0,10,NULL,8),(81,52,1,NULL,'Automatic sign-up of new trials activated',4,NULL,NULL,0,10,NULL,8),(81,53,1,NULL,'Automatic sign-up of new trials activated',4,NULL,NULL,0,10,21,8),(81,54,1,NULL,'Automatic sign-up of new trials activated',4,NULL,NULL,0,10,21,8),(81,55,1,NULL,'Automatic sign-up of new trials activated',4,5,NULL,0,10,21,8),(81,64,1,NULL,'Automatic sign-up of new trials (with captcha) activated',4,5,NULL,0,10,21,8);
+INSERT INTO `stories_AUD` VALUES (3,12,0,NULL,'FREE, OPEN SOURCE MARKET LEADER OF AGILE MGMT TOOLS',1,NULL,NULL,1,5,NULL,NULL),(4,12,0,NULL,'MEANEST MACHINE',1,NULL,NULL,0,5,NULL,3),(5,12,0,NULL,'MOST USERS',1,NULL,NULL,1,5,NULL,3),(6,12,0,NULL,'FULL POWER COMMUNITY',1,NULL,NULL,2,5,NULL,3),(7,12,0,'Agilefant has the conceptually best fit for real/world agile/lean development','The best model',5,NULL,NULL,0,7,NULL,4),(8,12,0,NULL,'Agilefant has gained the market leadership of free tools',1,NULL,NULL,4,5,NULL,5),(9,12,0,NULL,'Community is submitting in more new features than can be included in releases',1,NULL,NULL,0,5,NULL,6),(10,12,0,'(Includes Jarno, Petteri and Benjamin)','At least 10 people are contributing to Agilefant\'s development',5,NULL,NULL,1,5,NULL,9),(11,12,0,NULL,'Efforts to launch Agilefant are fully funded',5,NULL,NULL,4,5,NULL,6),(12,12,0,NULL,'An Agilefant Team has taken part in the EIT 2012 Cloud Summer School and won the pitching competition',5,NULL,NULL,0,8,13,11),(13,12,0,NULL,'The 3.0 beta backlog has been prioritized, published,drummed about, and ready to be taken apart by the coding-hungry community!',5,NULL,NULL,0,7,12,10),(14,12,0,NULL,'Enough evaluation instances readily available online',4,NULL,NULL,2,5,NULL,5),(14,46,1,NULL,'Enough evaluation instances readily available online',5,NULL,NULL,2,5,NULL,5),(15,12,0,NULL,'Agilefant has been recognized as the meanest machine',1,200,NULL,3,5,NULL,5),(16,12,0,NULL,'Releases',1,NULL,NULL,1,5,NULL,15),(17,12,0,NULL,'2.5.0',5,5,NULL,5,7,11,16),(18,12,0,NULL,'3.0 alpha 1',5,NULL,NULL,6,7,12,16),(19,12,0,NULL,'3.0 beta released',5,NULL,NULL,10,8,13,16),(20,12,0,'Blocked. No better free tool than Agilefant exists.','Find a better backlog management tool, one that is free as well as scales!',5,5,NULL,1,6,NULL,NULL),(21,12,0,'Blocked, \'cause the store is not open','Buy milk',3,1,NULL,3,6,NULL,NULL),(22,12,0,'<i>Pending for a raise</i>','Get a new car',2,40,0,4,6,NULL,NULL),(23,12,0,'Deferred, don\'t need more beer today','Get more beer',6,3,NULL,2,6,14,NULL),(23,48,1,'Deferred, don\'t need more beer today','Get more beer',1,3,NULL,2,6,14,NULL),(23,49,1,'Deferred, don\'t need more beer today','Get more beer',5,3,NULL,2,6,14,NULL),(23,50,1,'Deferred, don\'t need more beer today','Get more beer',6,3,NULL,2,6,14,NULL),(23,57,1,'Deferred, don\'t need more beer today','Get more beer',6,3,NULL,2,6,14,NULL),(24,12,0,'Agilefant HQ has enough funding to&nbsp; provide and develop the best free open source backlog management tool. For this, commercial activities are in place.','Agilefant Inc. has been launched',1,NULL,NULL,3,5,NULL,6),(25,12,0,NULL,'3.0 alpha 2',5,NULL,NULL,7,7,12,16),(26,12,0,NULL,'Instances 1-13',5,5,NULL,1,9,NULL,14),(27,12,0,NULL,'Instances 14-30',5,3,NULL,2,9,NULL,14),(28,12,0,NULL,'First steps',5,NULL,NULL,3,8,NULL,24),(29,12,0,NULL,'Prel. business models plan prepared at the EIT ICT labs Helsinki Summer School',5,NULL,NULL,0,8,13,28),(30,12,0,NULL,'Set Agilefant as one of the topics at EIT ICT labs Helsinki Summer School',5,NULL,NULL,2,8,NULL,28),(31,12,0,NULL,'Killer team recruited',5,NULL,NULL,1,8,NULL,28),(32,12,0,NULL,'Pre-course coding sessions',5,NULL,NULL,1,7,12,10),(33,12,0,NULL,'3.0 alpha 3..7',5,NULL,NULL,8,7,NULL,16),(34,12,0,NULL,'3.0 alpha 8',5,NULL,NULL,9,7,NULL,16),(35,12,0,NULL,'A full-time engineer has been recruited to work on Agilefant for the Summer',5,NULL,NULL,5,8,13,6),(36,12,0,NULL,'Agilefant has 100 registered user organizations',5,NULL,NULL,2,8,13,8),(36,43,1,NULL,'Agilefant has 100 registered user organizations',5,NULL,NULL,3,8,13,8),(37,12,0,NULL,'Agilefant has 200+ registered user organizations',4,NULL,NULL,1,9,NULL,8),(37,43,1,NULL,'Agilefant has 200+ registered user organizations',4,NULL,NULL,2,9,NULL,8),(38,12,0,'','Celebrate the release of Agilefant 3.0.0',5,NULL,NULL,2,8,14,6),(39,12,0,'Pending for:<br>- most important bugs in 3.0.0 have been discovered<br>- a core team member has started working on 3.0.0','3.0.1 released',5,NULL,NULL,11,9,16,16),(40,12,0,NULL,'Instances 31-100',5,3,NULL,3,9,NULL,14),(41,12,0,NULL,'Agilefant has 500 registered user organizations',1,NULL,NULL,0,10,20,8),(41,41,1,NULL,'Agilefant has 500 registered user organizations',5,NULL,NULL,0,10,20,8),(41,42,1,NULL,'Agilefant has 2000 registered user organizations',5,NULL,NULL,0,10,20,8),(41,43,1,NULL,'Agilefant has 2000 registered user organizations',5,NULL,NULL,1,10,20,8),(42,12,0,NULL,'Got 311ke from Tekes\' TUTL program to prepare the launch',5,NULL,NULL,1,9,16,24),(43,12,0,NULL,'Market leader of free open source tools',1,NULL,NULL,1,5,NULL,5),(44,12,0,NULL,'Cloud ver 2 set up',4,NULL,NULL,0,9,16,43),(45,12,0,NULL,'10 000 hosted users',1,NULL,NULL,4,10,NULL,43),(46,12,0,NULL,'3.0.0 released',5,NULL,NULL,12,9,15,16),(47,12,0,'','Submit the best application of TUTL funding round #3',5,NULL,0,2,9,15,24),(48,12,0,NULL,'3.0.2 released',4,2,NULL,4,9,16,16),(49,12,0,NULL,'2 seconds to Agilefant trial',1,NULL,NULL,0,9,NULL,5),(50,12,0,NULL,'Open just-email registration form for single-product trials in the community fant',5,NULL,NULL,0,9,16,49),(51,12,0,NULL,'Get Christmas presents for everyone',5,NULL,NULL,0,6,NULL,NULL),(52,12,0,'','Avoid the end of the world',5,NULL,NULL,0,NULL,14,NULL),(53,12,0,'','Celebrate Christmas',1,NULL,NULL,1,NULL,14,6),(53,16,1,'','Celebrate Christmas',5,NULL,NULL,1,NULL,14,6),(54,12,0,NULL,'Gathered a rockstar team for TUTL',5,NULL,NULL,0,10,NULL,24),(55,12,0,'','Recruited a full time CTO w/ full power tech savvy',5,NULL,NULL,1,10,17,54),(56,12,0,NULL,'Recruited three part time junior but xtremely skilled developers',5,NULL,NULL,2,10,17,54),(57,12,0,NULL,'Recuited a full time star developer',5,NULL,NULL,0,10,18,54),(58,12,0,NULL,'Instances 101-131',5,2,NULL,4,10,17,14),(59,12,0,NULL,'3.0.3 released',5,3,NULL,3,10,17,16),(59,73,1,NULL,'3.0.3 released',5,3,NULL,3,10,17,16),(60,12,0,NULL,'Semi-automatic evaluation and trial instance creation',5,2,NULL,7,10,19,14),(61,12,0,NULL,'Instances 131-145',5,2,NULL,5,10,18,14),(62,12,0,NULL,'3.1.1 released',5,5,NULL,2,10,19,16),(63,12,0,NULL,'Scripted the single-product account creation',5,NULL,NULL,6,10,18,14),(64,12,0,NULL,'Cloud ver 3 set up',5,NULL,NULL,1,10,19,43),(65,12,0,NULL,'Cloud ver 4 set up',1,NULL,NULL,3,10,20,43),(66,12,0,NULL,'200 hosted users',5,NULL,NULL,2,10,18,43),(67,12,0,NULL,'Each new release includes a community contribution',5,NULL,NULL,0,10,19,9),(68,12,0,NULL,'Evangelism tour',1,NULL,NULL,0,10,NULL,15),(69,12,0,NULL,'Tell to people @ AgileJkl',1,NULL,NULL,0,10,20,68),(69,18,1,NULL,'Tell to people @ AgileJkl',5,NULL,NULL,0,10,20,68),(69,20,1,NULL,'Tell to people @ AgileJkl',5,NULL,NULL,1,10,20,68),(69,25,1,NULL,'Tell to people @ AgileJkl',5,NULL,NULL,2,10,20,68),(70,12,0,NULL,'Pitch @ Tivit Results Seminar Finlandia Hall',1,NULL,NULL,1,10,20,68),(70,19,1,NULL,'Pitch @ Tivit Results Seminar Finlandia Hall',5,NULL,NULL,1,10,20,68),(70,20,1,NULL,'Pitch @ Tivit Results Seminar Finlandia Hall',5,NULL,NULL,2,10,20,68),(70,25,1,NULL,'Pitch @ Tivit Results Seminar Finlandia Hall',5,NULL,NULL,3,10,20,68),(71,12,0,NULL,'Get hot local references',1,NULL,NULL,2,10,NULL,68),(71,20,1,NULL,'Get hot local references',1,NULL,NULL,3,10,NULL,68),(71,25,1,NULL,'Get hot local references',1,NULL,NULL,4,10,NULL,68),(72,12,0,NULL,'Pitch @ Nitor Creations',1,NULL,NULL,0,10,20,71),(73,12,0,NULL,'Scripted the new instance creation',4,NULL,NULL,0,10,20,14),(74,12,0,NULL,'3.2 released',4,NULL,NULL,1,10,20,16),(75,12,0,NULL,'3.3 released',1,NULL,NULL,0,10,20,16),(76,20,0,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',0,NULL,NULL,0,10,NULL,68),(76,21,1,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',4,NULL,NULL,0,10,NULL,68),(76,22,1,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',4,NULL,NULL,0,10,21,68),(76,23,1,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',4,NULL,NULL,0,10,21,68),(76,24,1,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',4,8,NULL,0,10,21,68),(76,25,1,NULL,'Tell to people & survey for the most popular tools @ Turku Agile Day',4,8,NULL,1,10,21,68),(77,25,0,NULL,'Attended XP2013 Full Power',0,NULL,NULL,0,10,NULL,68),(77,27,1,NULL,'Attended XP2013 Full Power',1,NULL,NULL,0,10,NULL,68),(78,26,0,NULL,'Got practice pitching Agilefant Pecha Kucha -style',0,NULL,NULL,0,10,NULL,77),(78,27,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,NULL,NULL,0,10,NULL,77),(78,28,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,3,NULL,0,10,NULL,77),(78,29,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,4,NULL,0,10,NULL,77),(78,30,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,4,NULL,0,10,21,77),(78,31,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,4,NULL,0,10,21,77),(78,32,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,4,NULL,1,10,21,77),(78,36,1,NULL,'Got practice pitching Agilefant Pecha Kucha -style',1,4,NULL,2,10,21,77),(79,32,0,'','Done the sessions',0,NULL,NULL,0,10,NULL,77),(79,33,1,'','Done the sessions',0,NULL,NULL,0,10,21,77),(79,34,1,'','Done the sessions',0,NULL,NULL,0,10,21,77),(79,35,1,'','Done the sessions',2,NULL,NULL,0,10,21,77),(79,36,1,'','Done the sessions',2,NULL,NULL,1,10,21,77),(80,36,0,NULL,'Surveyed participants about their tool of choice',0,NULL,NULL,0,10,NULL,77),(80,37,1,NULL,'Surveyed participants about their tool of choice',2,NULL,NULL,0,10,NULL,77),(80,38,1,NULL,'Surveyed participants about their tool of choice',2,NULL,NULL,0,10,21,77),(80,39,1,NULL,'Surveyed participants about their tool of choice',2,4,NULL,0,10,21,77),(80,40,1,NULL,'Surveyed participants about their tool of choice',2,4,NULL,0,10,21,77),(81,43,0,NULL,'Automatic sign-up of new trials activated',0,NULL,NULL,0,10,NULL,8),(81,52,1,NULL,'Automatic sign-up of new trials activated',4,NULL,NULL,0,10,NULL,8),(81,53,1,NULL,'Automatic sign-up of new trials activated',4,NULL,NULL,0,10,21,8),(81,54,1,NULL,'Automatic sign-up of new trials activated',4,NULL,NULL,0,10,21,8),(81,55,1,NULL,'Automatic sign-up of new trials activated',4,5,NULL,0,10,21,8),(81,64,1,NULL,'Automatic sign-up of new trials (with captcha) activated',4,5,NULL,0,10,21,8),(81,72,1,NULL,'Automatic sign-up of new trials (with captcha) activated',4,5,NULL,0,10,21,8);
 /*!40000 ALTER TABLE `stories_AUD` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -584,7 +583,7 @@ CREATE TABLE `story_user` (
 
 LOCK TABLES `story_user` WRITE;
 /*!40000 ALTER TABLE `story_user` DISABLE KEYS */;
-INSERT INTO `story_user` VALUES (20,5),(22,5),(22,6),(23,5),(23,6),(24,6),(38,5),(38,6),(39,5),(39,6),(42,5),(42,6),(44,5),(44,6),(45,5),(47,6),(48,5),(48,6),(50,5),(50,6),(51,5),(52,5),(52,6),(53,5),(53,6),(55,5),(55,6),(56,5),(57,5),(58,5),(59,6),(59,11),(60,5),(61,5),(64,5),(67,5),(76,5),(76,6),(78,5),(78,6),(79,5),(79,6),(80,5),(80,6),(81,5),(81,6),(81,12);
+INSERT INTO `story_user` VALUES (20,5),(22,5),(22,6),(23,5),(23,6),(24,6),(38,5),(38,6),(39,5),(39,6),(42,5),(42,6),(44,5),(44,6),(45,5),(47,6),(48,5),(48,6),(50,5),(50,6),(51,5),(52,5),(52,6),(53,5),(53,6),(55,5),(55,6),(56,5),(57,5),(58,5),(59,6),(60,5),(61,5),(64,5),(67,5),(76,5),(76,6),(78,5),(78,6),(79,5),(79,6),(80,5),(80,6),(81,5),(81,6);
 /*!40000 ALTER TABLE `story_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -612,7 +611,7 @@ CREATE TABLE `story_user_AUD` (
 
 LOCK TABLES `story_user_AUD` WRITE;
 /*!40000 ALTER TABLE `story_user_AUD` DISABLE KEYS */;
-INSERT INTO `story_user_AUD` VALUES (12,20,5,0),(12,22,5,0),(12,22,6,0),(12,23,5,0),(12,24,6,0),(12,38,5,0),(12,38,6,0),(12,39,5,0),(12,39,6,0),(12,42,5,0),(12,42,6,0),(12,44,5,0),(12,44,6,0),(12,45,5,0),(12,47,6,0),(12,48,5,0),(12,48,6,0),(12,50,5,0),(12,50,6,0),(12,51,5,0),(12,52,5,0),(12,52,6,0),(12,53,5,0),(12,53,6,0),(12,55,5,0),(12,55,6,0),(12,56,5,0),(12,57,5,0),(12,58,5,0),(12,59,6,0),(12,59,11,0),(12,60,5,0),(12,61,5,0),(12,64,5,0),(12,67,5,0),(23,76,5,0),(23,76,6,0),(31,78,5,0),(31,78,6,0),(34,79,5,0),(34,79,6,0),(40,80,5,0),(40,80,6,0),(54,81,5,0),(54,81,6,0),(54,81,12,0),(57,23,6,0);
+INSERT INTO `story_user_AUD` VALUES (12,20,5,0),(12,22,5,0),(12,22,6,0),(12,23,5,0),(12,24,6,0),(12,38,5,0),(12,38,6,0),(12,39,5,0),(12,39,6,0),(12,42,5,0),(12,42,6,0),(12,44,5,0),(12,44,6,0),(12,45,5,0),(12,47,6,0),(12,48,5,0),(12,48,6,0),(12,50,5,0),(12,50,6,0),(12,51,5,0),(12,52,5,0),(12,52,6,0),(12,53,5,0),(12,53,6,0),(12,55,5,0),(12,55,6,0),(12,56,5,0),(12,57,5,0),(12,58,5,0),(12,59,6,0),(12,59,11,0),(12,60,5,0),(12,61,5,0),(12,64,5,0),(12,67,5,0),(23,76,5,0),(23,76,6,0),(31,78,5,0),(31,78,6,0),(34,79,5,0),(34,79,6,0),(40,80,5,0),(40,80,6,0),(54,81,5,0),(54,81,6,0),(54,81,12,0),(57,23,6,0),(72,81,12,2),(73,59,11,2);
 /*!40000 ALTER TABLE `story_user_AUD` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -632,8 +631,8 @@ CREATE TABLE `storyrank` (
   UNIQUE KEY `backlog_id` (`backlog_id`,`story_id`),
   KEY `FK6600C2A1E0E4BFA2` (`story_id`),
   KEY `FK6600C2A1F63400A2` (`backlog_id`),
-  CONSTRAINT `FK6600C2A1F63400A2` FOREIGN KEY (`backlog_id`) REFERENCES `backlogs` (`id`),
-  CONSTRAINT `FK6600C2A1E0E4BFA2` FOREIGN KEY (`story_id`) REFERENCES `stories` (`id`)
+  CONSTRAINT `FK6600C2A1E0E4BFA2` FOREIGN KEY (`story_id`) REFERENCES `stories` (`id`),
+  CONSTRAINT `FK6600C2A1F63400A2` FOREIGN KEY (`backlog_id`) REFERENCES `backlogs` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -753,8 +752,8 @@ CREATE TABLE `tasks` (
   PRIMARY KEY (`id`),
   KEY `FK6907B8E4157D2A2` (`iteration_id`),
   KEY `FK6907B8EE0E4BFA2` (`story_id`),
-  CONSTRAINT `FK6907B8EE0E4BFA2` FOREIGN KEY (`story_id`) REFERENCES `stories` (`id`),
-  CONSTRAINT `FK6907B8E4157D2A2` FOREIGN KEY (`iteration_id`) REFERENCES `backlogs` (`id`)
+  CONSTRAINT `FK6907B8E4157D2A2` FOREIGN KEY (`iteration_id`) REFERENCES `backlogs` (`id`),
+  CONSTRAINT `FK6907B8EE0E4BFA2` FOREIGN KEY (`story_id`) REFERENCES `stories` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -816,8 +815,8 @@ CREATE TABLE `team_iteration` (
   PRIMARY KEY (`Team_id`,`Iteration_id`),
   KEY `FKF2269B7B4157D2A2` (`Iteration_id`),
   KEY `FKF2269B7B745BA992` (`Team_id`),
-  CONSTRAINT `FKF2269B7B745BA992` FOREIGN KEY (`Team_id`) REFERENCES `teams` (`id`),
-  CONSTRAINT `FKF2269B7B4157D2A2` FOREIGN KEY (`Iteration_id`) REFERENCES `backlogs` (`id`)
+  CONSTRAINT `FKF2269B7B4157D2A2` FOREIGN KEY (`Iteration_id`) REFERENCES `backlogs` (`id`),
+  CONSTRAINT `FKF2269B7B745BA992` FOREIGN KEY (`Team_id`) REFERENCES `teams` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -827,7 +826,7 @@ CREATE TABLE `team_iteration` (
 
 LOCK TABLES `team_iteration` WRITE;
 /*!40000 ALTER TABLE `team_iteration` DISABLE KEYS */;
-INSERT INTO `team_iteration` VALUES (2,14),(3,14);
+INSERT INTO `team_iteration` VALUES (2,14);
 /*!40000 ALTER TABLE `team_iteration` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -855,7 +854,7 @@ CREATE TABLE `team_iteration_AUD` (
 
 LOCK TABLES `team_iteration_AUD` WRITE;
 /*!40000 ALTER TABLE `team_iteration_AUD` DISABLE KEYS */;
-INSERT INTO `team_iteration_AUD` VALUES (12,2,14,0),(12,3,14,0);
+INSERT INTO `team_iteration_AUD` VALUES (12,2,14,0),(12,3,14,0),(71,3,14,2);
 /*!40000 ALTER TABLE `team_iteration_AUD` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -872,8 +871,8 @@ CREATE TABLE `team_product` (
   PRIMARY KEY (`Team_id`,`Product_id`),
   KEY `FK65CE090D745BA992` (`Team_id`),
   KEY `FK65CE090DA7FE2362` (`Product_id`),
-  CONSTRAINT `FK65CE090DA7FE2362` FOREIGN KEY (`Product_id`) REFERENCES `backlogs` (`id`),
-  CONSTRAINT `FK65CE090D745BA992` FOREIGN KEY (`Team_id`) REFERENCES `teams` (`id`)
+  CONSTRAINT `FK65CE090D745BA992` FOREIGN KEY (`Team_id`) REFERENCES `teams` (`id`),
+  CONSTRAINT `FK65CE090DA7FE2362` FOREIGN KEY (`Product_id`) REFERENCES `backlogs` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -883,7 +882,7 @@ CREATE TABLE `team_product` (
 
 LOCK TABLES `team_product` WRITE;
 /*!40000 ALTER TABLE `team_product` DISABLE KEYS */;
-INSERT INTO `team_product` VALUES (2,5),(2,6),(3,5);
+INSERT INTO `team_product` VALUES (2,5),(2,6);
 /*!40000 ALTER TABLE `team_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -911,7 +910,7 @@ CREATE TABLE `team_product_AUD` (
 
 LOCK TABLES `team_product_AUD` WRITE;
 /*!40000 ALTER TABLE `team_product_AUD` DISABLE KEYS */;
-INSERT INTO `team_product_AUD` VALUES (12,2,5,0),(12,2,6,0),(12,3,5,0);
+INSERT INTO `team_product_AUD` VALUES (12,2,5,0),(12,2,6,0),(12,3,5,0),(71,3,5,2);
 /*!40000 ALTER TABLE `team_product_AUD` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -938,7 +937,7 @@ CREATE TABLE `team_user` (
 
 LOCK TABLES `team_user` WRITE;
 /*!40000 ALTER TABLE `team_user` DISABLE KEYS */;
-INSERT INTO `team_user` VALUES (5,2),(6,2),(9,3),(11,3),(12,3),(10,3),(6,3);
+INSERT INTO `team_user` VALUES (5,2),(6,2);
 /*!40000 ALTER TABLE `team_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -966,7 +965,7 @@ CREATE TABLE `team_user_AUD` (
 
 LOCK TABLES `team_user_AUD` WRITE;
 /*!40000 ALTER TABLE `team_user_AUD` DISABLE KEYS */;
-INSERT INTO `team_user_AUD` VALUES (12,2,5,0),(12,2,6,0),(12,3,6,0),(12,3,9,0),(12,3,10,0),(12,3,11,0),(12,3,12,0);
+INSERT INTO `team_user_AUD` VALUES (12,2,5,0),(12,2,6,0),(12,3,6,0),(12,3,9,0),(12,3,10,0),(12,3,11,0),(12,3,12,0),(70,3,6,0);
 /*!40000 ALTER TABLE `team_user_AUD` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -983,7 +982,7 @@ CREATE TABLE `teams` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -992,7 +991,7 @@ CREATE TABLE `teams` (
 
 LOCK TABLES `teams` WRITE;
 /*!40000 ALTER TABLE `teams` DISABLE KEYS */;
-INSERT INTO `teams` VALUES (2,NULL,'Admin team'),(3,NULL,'Team Agilefant');
+INSERT INTO `teams` VALUES (2,NULL,'Admin team');
 /*!40000 ALTER TABLE `teams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1021,7 +1020,7 @@ CREATE TABLE `teams_AUD` (
 
 LOCK TABLES `teams_AUD` WRITE;
 /*!40000 ALTER TABLE `teams_AUD` DISABLE KEYS */;
-INSERT INTO `teams_AUD` VALUES (2,12,0,NULL,'Admin team'),(3,12,0,NULL,'Team Agilefant');
+INSERT INTO `teams_AUD` VALUES (2,12,0,NULL,'Admin team'),(3,12,0,NULL,'Team Agilefant'),(3,70,1,NULL,'Team Agilefant'),(3,71,2,NULL,'Team Agilefant');
 /*!40000 ALTER TABLE `teams_AUD` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1048,7 +1047,7 @@ CREATE TABLE `users` (
   `weekEffort` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `loginName` (`loginName`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1057,7 +1056,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (5,'','\0','',NULL,'','Administrator','Admin','admin',1,'5ebe2294ecd0e0f08eab7690d2a6ee69',16,NULL),(6,'','','','j@aa.com','','Jarno Vähäniitty','Jarno','jvahanii',1,'5ebe2294ecd0e0f08eab7690d2a6ee69',4,2235),(7,'\0','\0','',NULL,'','readonly',NULL,'readonly',1,'5ebe2294ecd0e0f08eab7690d2a6ee69',0,NULL),(8,'\0','','','nonadmin@gmail.com','','Non-admin user that has access to nothing (password: secret - log in with this user and see what happens)','NonAdmin','nonadmin',1,'5ebe2294ecd0e0f08eab7690d2a6ee69',16,0),(9,'','','','petteri@petteri.fi','\0','Petteri Räty','Petteri','praty',1,'5ebe2294ecd0e0f08eab7690d2a6ee69',16,0),(10,'\0','','','j@j.com','\0','Joonas Javanainen','Javis','javis',1,'5ebe2294ecd0e0f08eab7690d2a6ee69',16,0),(11,'\0','','','v@v.com','','Ville Seppä','Ville','ville',1,'5ebe2294ecd0e0f08eab7690d2a6ee69',16,0),(12,'\0','','','s@s.com','','Santeri Korri','Santeri','santeri',1,'5ebe2294ecd0e0f08eab7690d2a6ee69',16,0);
+INSERT INTO `users` VALUES (5,'','\0','',NULL,'','Administrator','Admin','admin',1,'5ebe2294ecd0e0f08eab7690d2a6ee69',16,NULL),(6,'','','','j@aa.com','\0','Jarno Vähäniitty','Jarno','jvahanii',1,'5ebe2294ecd0e0f08eab7690d2a6ee69',4,2235);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1090,7 +1089,7 @@ CREATE TABLE `users_AUD` (
 
 LOCK TABLES `users_AUD` WRITE;
 /*!40000 ALTER TABLE `users_AUD` DISABLE KEYS */;
-INSERT INTO `users_AUD` VALUES (3,13,1,NULL,'','Administrator','Admin','adminoriginal',NULL),(3,14,1,NULL,'','Administrator original','Admin','adminoriginal',NULL),(5,12,0,NULL,'','Administrator','Admin','admin1369925666014',NULL),(5,15,1,NULL,'','Administrator','Admin','admin',NULL),(6,12,0,'jarno@agilefant.org','','Jarno Vähäniitty','Jarno','jvahanii',2235),(6,59,1,'j@aa.com','','Jarno Vähäniitty','Jarno','jvahanii',2235),(7,12,0,NULL,'','readonly',NULL,'readonly1369925666021',NULL),(8,12,0,'nonadmin@gmail.com','','Non-admin user that has access to nothing (password: nonadmin - log in with this user and see what happens)','NonAdmin','nonadmin',0),(8,60,1,'nonadmin@gmail.com','','Non-admin user that has access to nothing (password: secret - log in with this user and see what happens)','NonAdmin','nonadmin',0),(9,12,0,'petteri@petteri.fi','\0','Petteri Räty','Petteri','praty',0),(10,12,0,'j@j.com','\0','Joonas Javanainen','Javis','javis',0),(11,12,0,'v@v.com','\0','Ville Seppä','Ville','ville',0),(11,45,1,'v@v.com','','Ville Seppä','Ville','ville',0),(12,12,0,'s@s.com','\0','Santeri Korri','Santeri','santeri',0),(12,44,1,'s@s.com','','Santeri Korri','Santeri','santeri',0);
+INSERT INTO `users_AUD` VALUES (3,13,1,NULL,'','Administrator','Admin','adminoriginal',NULL),(3,14,1,NULL,'','Administrator original','Admin','adminoriginal',NULL),(5,12,0,NULL,'','Administrator','Admin','admin1369925666014',NULL),(5,15,1,NULL,'','Administrator','Admin','admin',NULL),(6,12,0,'jarno@agilefant.org','','Jarno Vähäniitty','Jarno','jvahanii',2235),(6,59,1,'j@aa.com','','Jarno Vähäniitty','Jarno','jvahanii',2235),(6,69,1,'j@aa.com','\0','Jarno Vähäniitty','Jarno','jvahanii',2235),(7,12,0,NULL,'','readonly',NULL,'readonly1369925666021',NULL),(7,65,1,NULL,'\0','readonly',NULL,'readonly',NULL),(8,12,0,'nonadmin@gmail.com','','Non-admin user that has access to nothing (password: nonadmin - log in with this user and see what happens)','NonAdmin','nonadmin',0),(8,60,1,'nonadmin@gmail.com','','Non-admin user that has access to nothing (password: secret - log in with this user and see what happens)','NonAdmin','nonadmin',0),(8,68,1,'nonadmin@gmail.com','\0','Non-admin user that has access to nothing (password: secret - log in with this user and see what happens)','NonAdmin','nonadmin',0),(9,12,0,'petteri@petteri.fi','\0','Petteri Räty','Petteri','praty',0),(10,12,0,'j@j.com','\0','Joonas Javanainen','Javis','javis',0),(11,12,0,'v@v.com','\0','Ville Seppä','Ville','ville',0),(11,45,1,'v@v.com','','Ville Seppä','Ville','ville',0),(11,66,1,'v@v.com','\0','Ville Seppä','Ville','ville',0),(12,12,0,'s@s.com','\0','Santeri Korri','Santeri','santeri',0),(12,44,1,'s@s.com','','Santeri Korri','Santeri','santeri',0),(12,67,1,'s@s.com','\0','Santeri Korri','Santeri','santeri',0);
 /*!40000 ALTER TABLE `users_AUD` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1222,4 +1221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-31 18:45:51
+-- Dump completed on 2013-08-15 14:57:27

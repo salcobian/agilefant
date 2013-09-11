@@ -52,6 +52,8 @@ public class MenuBusinessTest {
     
     UserBusiness userBusiness;
     
+    AuthorizationBusiness authorizationBusiness;
+    
     Set<Product> products;
     
     @Before
@@ -78,6 +80,9 @@ public class MenuBusinessTest {
         
         userBusiness = createStrictMock(UserBusiness.class);
         menuBusiness.setUserBusiness(userBusiness);
+        
+        authorizationBusiness = createStrictMock(AuthorizationBusiness.class);
+        menuBusiness.setAuthorizationBusiness(authorizationBusiness);
     }
 
     @Before
@@ -121,11 +126,11 @@ public class MenuBusinessTest {
         proj1.getChildren().add(iter3);
     }
     private void replayAll() {
-        replay(iterationDAO, projectDAO, storyDAO, productBusiness, transferObjectBusiness, iterationBusiness, userBusiness);
+        replay(iterationDAO, projectDAO, storyDAO, productBusiness, transferObjectBusiness, iterationBusiness, userBusiness, authorizationBusiness);
     }
 
     private void verifyAll() {
-        verify(iterationDAO, projectDAO, storyDAO, productBusiness, transferObjectBusiness, iterationBusiness, userBusiness);
+        verify(iterationDAO, projectDAO, storyDAO, productBusiness, transferObjectBusiness, iterationBusiness, userBusiness, authorizationBusiness);
     }
     
     @Test
@@ -142,9 +147,10 @@ public class MenuBusinessTest {
         user.setTeams(teams);
         team.setProducts(products);
         
-        expect(userBusiness.retrieve(user.getId())).andReturn(user);
         expect(productBusiness.retrieveAllOrderByName()).andReturn(
                 products);
+        expect(authorizationBusiness.isBacklogAccessible(1, SecurityUtil.getLoggedUser())).andReturn(true);
+        expect(authorizationBusiness.isBacklogAccessible(2, SecurityUtil.getLoggedUser())).andReturn(true);
 
         final ArrayList<Iteration> emptyStandAloneIterations = new ArrayList<Iteration>();
         expect(iterationBusiness.retrieveAllStandAloneIterations())
@@ -155,7 +161,7 @@ public class MenuBusinessTest {
         
         replayAll();
                
-        List<MenuDataNode> actual = menuBusiness.constructBacklogMenuData(user);
+        List<MenuDataNode> actual = menuBusiness.constructBacklogMenuData();
         verifyAll();
         
         assertEquals(2, actual.size());
