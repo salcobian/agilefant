@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Repository;
@@ -29,4 +30,11 @@ public class LoginDAOHibernate extends GenericDAOHibernate<Login> implements
         return asList(crit);
     }
 
+	@Override
+	public int retrieveLoginCountByUser(User user) {
+        Criteria crit = this.createCriteria(Login.class);
+        crit.add(Restrictions.eq("user", user));
+        crit.setProjection(Projections.rowCount());
+        return ((Long)this.uniqueResult(crit)).intValue();
+	}
 }

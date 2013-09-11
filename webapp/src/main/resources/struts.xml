@@ -486,7 +486,7 @@
 			<interceptor-ref name="exception"/>
             <interceptor-ref name="i18n"/>
             <interceptor-ref name="fileUpload">
-       			<param name="allowedTypes">application/zip</param>
+       			<param name="allowedTypes">application/zip,application/x-zip-compressed,application/x-zip</param>
        			<param name="maximumSize">104857600</param>
   			</interceptor-ref> 
             <interceptor-ref name="params">
@@ -500,6 +500,7 @@
             </interceptor-ref>
     
 			<result name="success" type="redirectAction">databaseExport</result>
+			<result name="none" type="redirectAction">databaseExport</result>
 			<result name="error">/WEB-INF/jsp/dbImportError.jsp</result>
 			
 		</action>

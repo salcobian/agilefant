@@ -23,6 +23,7 @@ import fi.hut.soberit.agilefant.business.ProductBusiness;
 import fi.hut.soberit.agilefant.business.UserBusiness;
 import fi.hut.soberit.agilefant.db.export.XmlBackupper;
 import fi.hut.soberit.agilefant.exportimport.ExportImport;
+import fi.hut.soberit.agilefant.exportimport.ExportImport.VersionMismatchException;
 
 @Component("dbExportAction")
 @Scope("prototype")
@@ -88,6 +89,9 @@ public class DatabaseExportAction extends ActionSupport {
     
     public String databaseImport() {
         try {
+            if (fileUpload == null) {
+                return Action.NONE;
+            }
             InputStream inputStream = new FileInputStream(fileUpload);
             ZipInputStream zipInputStream = new ZipInputStream(inputStream);
             zipInputStream.getNextEntry();
@@ -95,7 +99,11 @@ public class DatabaseExportAction extends ActionSupport {
             exportImportBusiness.importOrganization(organizationTO);
             return Action.SUCCESS;
         } catch (Exception e) {
-        	errorStacktrace = Throwables.getStackTraceAsString(e);
+            if (e.getCause() instanceof VersionMismatchException) {
+                errorStacktrace = e.getMessage();
+            } else {
+                errorStacktrace = Throwables.getStackTraceAsString(e);
+            }
             return Action.ERROR;
         }
     }

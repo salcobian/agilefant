@@ -490,9 +490,6 @@ StoryController.prototype.searchForTask = function() {
     		for ( var i = 0; i < this.childControllers[type].length; i++) {
       			if(this.childControllers[type][i].model.id == id) {
       				row = this.childControllers[type][i].view;
-      				if(!$.browser.msie) {
-				        window.location.hash = "#";
-				    }
 				    var pos = row.getElement().offset();
 	      			window.scrollTo(pos.left, pos.top);
       				break;

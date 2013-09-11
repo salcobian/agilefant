@@ -43,7 +43,7 @@ DailyWorkController.prototype.handleModelEvents = function(event) {
   }
 
   //task oe/el changed
-  if (event.getObject() instanceof TaskModel) {
+  if (event.getObject() instanceof TaskModel && !(event instanceof DynamicsEvents.RankChanged) && !(event instanceof DynamicsEvents.EditEvent)) {
     this.options.onUserLoadUpdate();
   }
   
@@ -67,12 +67,16 @@ DailyWorkController.prototype.handleModelEvents = function(event) {
 
 DailyWorkController.prototype.initialize = function() {
   var me = this;
+  var overlay = $("#dailyworkLoadingOverlay");
+  overlay.fadeIn();
+  overlay.show();
   ModelFactory.initializeFor(ModelFactory.initializeForTypes.dailyWork,
     this.options.userId,
     function(model) {
       me.model = model;
       me._showNoteBox();
       me._paintLists();
+      jQuery("#dailyworkPleasewait").remove();
     }
   );
 };

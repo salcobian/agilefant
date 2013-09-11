@@ -99,13 +99,19 @@ public class SecurityInterceptor implements Interceptor {
                     //check not setting user.admin
                     access = true;
                 }
+            } else if(actionName.equals("storeNewUser")) {
+                Map params = req.getParameterMap();
+                boolean attemptToCreateNonAdmin = params.containsKey("user.admin") && ((String[]) params.get("user.admin"))[0].equals("false");
+                // Non admins can create only other non admin users
+                if(attemptToCreateNonAdmin) {
+                	access = true;
+                }
             } else if(actionName.equals("retrieveAllProducts")
                     || actionName.equals("retrieveAllSAIterations")){
                 //access matrix operations
                 access = false;
             } else if(actionName.equals("storeNewIteration")
-                    || actionName.equals("storeNewProduct")
-                    || actionName.equals("storeNewUser")) {
+                    || actionName.equals("storeNewProduct")) {
                 // these are operations available to everyone
                 access = true;
             } else {

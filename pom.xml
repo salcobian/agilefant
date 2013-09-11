@@ -4,7 +4,7 @@
 
 	<groupId>fi.soberit.agilefant</groupId>
 	<artifactId>agilefant-parent</artifactId>
-	<version>3.3.2-SNAPSHOT</version>
+	<version>3.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Agilefant :: Parent POM</name>
 
@@ -46,7 +46,7 @@
 		<spring.version>3.2.1.RELEASE</spring.version>
 		<spring.security.version>3.1.3.RELEASE</spring.security.version>
 		<stringtemplate.version>3.0</stringtemplate.version>
-		<struts.version>2.3.8</struts.version>
+		<struts.version>2.3.14.2</struts.version>
 		<typesafe.config.version>1.0.0</typesafe.config.version>
 		<usertype.version>3.0.0.GA</usertype.version>
 		<jackson.version>2.2.0</jackson.version>
@@ -619,14 +619,6 @@
 			</modules>
 			<build>
 				<plugins>
-					<plugin>
-						<artifactId>maven-jar-plugin</artifactId>
-						<configuration>
-							<excludes>
-								<exclude>**/rebel.xml</exclude>
-							</excludes>
-						</configuration>
-					</plugin>
 					<plugin>
 						<artifactId>maven-war-plugin</artifactId>
 						<configuration>

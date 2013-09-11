@@ -69,7 +69,7 @@ public abstract class GenericDAOHibernate<T> implements GenericDAO<T> {
 
     /** {@inheritDoc} */
     public Collection<T> getAll() {
-        return this.asList(this.createCriteria(this.getPersistentClass()));
+        return this.asList(this.createCriteria(this.getPersistentClass()).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY));
     }
 
     /** {@inheritDoc} */

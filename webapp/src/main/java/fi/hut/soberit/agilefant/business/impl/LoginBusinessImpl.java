@@ -37,5 +37,10 @@ public class LoginBusinessImpl extends GenericBusinessImpl<Login> implements
         return this.loginDAO.retrieveLoginsByUser(user);
     }
 
+	@Override
+	public int retrieveLoginCountByUser(User user) {
+		return this.loginDAO.retrieveLoginCountByUser(user);
+	}
+
   
 }
